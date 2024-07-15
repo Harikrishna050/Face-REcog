@@ -1,0 +1,14 @@
+.row{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 2rem;
+    padding: 3rem 0;
+    text-align: center;
+    .functionality{
+        div{
+            margin-bottom: 1rem;
+        }
+    }
+}

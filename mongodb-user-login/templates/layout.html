@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/layout.css') }}">
+
+</head>
+
+<body>
+    <div class="navbar">
+        <!-- Logo and text -->
+        <div class="logo-container">
+            <img src="../static/img/VITLogoEmblem.png" alt="VIT Logo" class="logo">
+            <span class="brand-name">VIT</span>
+        </div>
+        <!-- Navbar links (you can add more links here) -->
+        <div class="nav-links">
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Services</a>
+            <a href="#">Contact</a>
+        </div>
+    </div>
+    <div class="container">
+        <div class="heading">
+            <h1>Class Attendance</h1>
+            <h4>Faculty Id {{username}}</h4>
+        </div>
+        <div class="row">
+            <!-- <p>You are logged in as {{ username }}</p> -->
+            <div class="functionality">
+                <form action="{{ url_for('generate_qr') }}" method="get">
+                    <button type="submit">Generate QR Code</button>
+                </form>
+                <!-- /save_to_excel -->
+                <div class="download-att">
+                    <a href="{{ url_for('download_attendance') }}">Download Attendance</a>
+                </div>
+            </div>
+            <form action="{{ url_for('logout') }}" method="post">
+                <button type="submit">logout</button>
+            </form>
+
+        </div>
+    </div>
+</body>
+
+
+<script>
+    document.getElementById("generate_qr").addEventListener("click", function(event) {
+        event.preventDefault(); // Prevent default behavior of anchor tag
+        fetch("/generate_qr", { method: "POST" }) // Send POST request to /generate_qr
+            .then(response => {
+                if (response.ok) {
+                    console.log("QR code generated successfully");
+                } else {
+                    console.error("Failed to generate QR code");
+                }
+            })
+            .catch(error => {
+                console.error("Error:", error);
+            });
+    });
+</script>
+
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/layout.css') }}">
+
+</head>
+
+<body>
+    <div class="navbar">
+        <!-- Logo and text -->
+        <div class="logo-container">
+            <img src="../static/img/VITLogoEmblem.png" alt="VIT Logo" class="logo">
+            <span class="brand-name">VIT</span>
+        </div>
+        <!-- Navbar links (you can add more links here) -->
+        <div class="nav-links">
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Services</a>
+            <a href="#">Contact</a>
+        </div>
+    </div>
+    <div class="container">
+        <div class="heading">
+            <h1>Scan QR code for Attendance</h1>
+        </div>
+        <div class="row">
+            <img src="../static/img/myqrcode.png" alt="QR code">
+        </div>
+    </div>
+</body>
+
+<!-- <script>
+    // Update the QR code every 5 seconds (adjust the interval as needed)
+    setInterval(updateQRCode, 2000); // 5000 milliseconds = 5 seconds
+
+    function updateQRCode() {
+        // Make a GET request to the Flask endpoint to get the latest QR code image
+        // Set the src attribute of the img element to the received QR code image URL
+        document.querySelector('.row img').src = "../static/img/myqrcode.png";
+    }
+
+</script> -->
+
+</html>

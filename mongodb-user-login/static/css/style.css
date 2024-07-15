@@ -1,0 +1,44 @@
+
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: skyblue;
+  padding: 4rem 4rem;
+  .logo-container {
+    position: absolute;
+      left: 5px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    img {
+      height: 4.2rem;
+    }
+    .brand-name {
+        margin: 0 1.5rem;
+        font-size: 4rem;
+        font-weight: bolder;
+        font-style: normal;
+        color: white;
+      }
+  }
+
+  .nav-links{
+    position: absolute;
+    right: 0px;
+    a{
+        margin: 0 1rem;
+    }
+  }
+}
+
+
+.container{
+    .heading{
+        text-align: center;
+        h1{
+            font-weight: bold;
+        }
+    }
+}
